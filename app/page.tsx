@@ -1,100 +1,84 @@
-import Image from "next/image";
+"use client"; 
+
+import Head from 'next/head';
+import { useState } from 'react';
+import Link from 'next/link';
+import Navbar from './components/Navbar';
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+  const [dropdown, setDropdown] = useState(false);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  return (
+    <div>
+      <Head>
+        <title>Bally Paysage</title>
+        <meta name="description" content="Page vitrine de Bally Paysage" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+      </Head>
+
+      {/* <nav className="bg-gray-800 p-4 flex justify-center space-x-8 fixed top-0 w-full z-50 shadow-md">
+        <a href="#accueil" className="text-white hover:bg-gray-700 px-4 py-2 rounded">Accueil</a>
+        <a href="#apropos" className="text-white hover:bg-gray-700 px-4 py-2 rounded">À propos</a>
+        <div 
+          className="relative"
+          onMouseEnter={() => setDropdown(true)}
+          onMouseLeave={() => setDropdown(false)}
+        >
+          <a href="#realisations" className="text-white hover:bg-gray-700 px-4 py-2 rounded cursor-pointer">Réalisations</a>
+          {dropdown && (
+            <div className="absolute bg-white text-black shadow-lg rounded w-48 mt-2">
+              <Link href="/cloture" className="block px-4 py-2 hover:bg-gray-200">Clôture</Link>
+              <Link href="/engazonnement" className="block px-4 py-2 hover:bg-gray-200">Engazonnement</Link>
+              <Link href="/entretien" className="block px-4 py-2 hover:bg-gray-200">Entretien</Link>
+              <Link href="/pavage" className="block px-4 py-2 hover:bg-gray-200">Pavage</Link>
+              <Link href="/terrasse" className="block px-4 py-2 hover:bg-gray-200">Terrasse</Link>
+            </div>
+          )}
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <a href="#contact" className="text-white hover:bg-gray-700 px-4 py-2 rounded">Contact</a>
+      </nav> */}
+      <Navbar />
+      <div className="pt-24">
+        <section id="accueil" className="min-h-screen flex flex-col items-center justify-center bg-green-200 text-center">
+          <h1 className="text-5xl font-bold">Bienvenue chez Bally Paysage</h1>
+          <p className="text-lg mt-4">Votre expert paysagiste pour des espaces verts magnifiques.</p>
+        </section>
+
+        <section id="apropos" className="min-h-screen flex flex-col items-center justify-center bg-white text-center">
+          <h2 className="text-4xl font-semibold">À propos de nous</h2>
+          <p className="text-lg mt-4">Nous sommes une entreprise spécialisée dans l'aménagement paysager depuis plus de 10 ans.</p>
+        </section>
+
+        <section id="realisations" className="min-h-screen flex flex-col items-center justify-center bg-white text-center">
+          <h2 className="text-4xl font-semibold">Nos-REALISATIONS</h2>
+          <p className="text-lg mt-4">Découvrez nos services de clôture, d'engazonnement, d'entretien et de pavage.</p>
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 w-full max-w-4xl">
+          <Link href="/cloture" className="bg-green-400 p-8 rounded-lg shadow-lg text-white text-2xl hover:bg-green-500 transition">
+            Clôture
+          </Link>
+          <Link href="/engazonnement" className="bg-blue-400 p-8 rounded-lg shadow-lg text-white text-2xl hover:bg-blue-500 transition">
+            Engazonnement
+          </Link>
+          <Link href="/entretien" className="bg-yellow-400 p-8 rounded-lg shadow-lg text-white text-2xl hover:bg-yellow-500 transition">
+            Entretien
+          </Link>
+          <Link href="/pavage" className="bg-red-400 p-8 rounded-lg shadow-lg text-white text-2xl hover:bg-red-500 transition">
+            Pavage
+          </Link>
+          <Link href="/terrasse" className="bg-purple-400 p-8 rounded-lg shadow-lg text-white text-2xl hover:bg-purple-500 transition">
+            Terrasse
+          </Link>
+        </div>
+        </section>
+
+        <section id="contact" className="min-h-screen flex flex-col items-center justify-center bg-green-300 text-center">
+          <h2 className="text-4xl font-semibold">Contactez-nous</h2>
+          <p className="text-lg mt-4">Envie de transformer votre jardin ? Contactez-nous dès aujourd'hui.</p>
+        </section>
+      </div>
+
+      <footer className="bg-gray-800 text-white text-center p-4">
+        <p>&copy; 2025 Bally Paysage. Tous droits réservés.</p>
       </footer>
     </div>
   );

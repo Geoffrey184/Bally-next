@@ -54,6 +54,7 @@ export default function Navbar() {
             onMouseLeave={() => setDropdown(false)}
           >
             <button 
+              onClick={() => handleScroll('realisations')} 
               className="text-white hover:bg-gray-700 px-4 py-2 rounded"
             >
               Réalisations
@@ -97,6 +98,13 @@ export default function Navbar() {
           >
             Réalisations
           </button>
+          <div className="text-white">
+            <Link href="/cloture" className="block px-4 py-2">Clôture</Link>
+            <Link href="/engazonnement" className="block px-4 py-2">Engazonnement</Link>
+            <Link href="/entretien" className="block px-4 py-2">Entretien</Link>
+            <Link href="/pavage" className="block px-4 py-2">Pavage</Link>
+            <Link href="/terrasse" className="block px-4 py-2">Terrasse</Link>
+          </div>
           <button 
             onClick={() => handleScroll('contact')} 
             className="text-white text-xl"

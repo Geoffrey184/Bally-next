@@ -11,7 +11,7 @@ export default function Entretien() {
         <meta name="description" content="Entretien des espaces verts" />
       </Head>
       <h1 className="text-5xl font-bold">Entretien</h1>
-      <p className="text-lg mt-4">Nous assurons l'entretien régulier de vos espaces verts.</p>
+      <p className="text-lg mt-4">Nous assurons l&apos;entretien régulier de vos espaces verts.</p>
     </div>
     </div>
   );

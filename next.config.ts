@@ -1,10 +1,8 @@
-const isProd = process.env.NODE_ENV === 'production';
+import type { NextConfig } from 'next';
 
-const nextConfig = {
-  output: 'export',
-  basePath: '/Bally-next',
-  assetPrefix: isProd ? '/Bally-next/' : '',
-  trailingSlash: true, // Assure des chemins avec des slashes finaux pour éviter les erreurs 404
+const nextConfig: NextConfig = {
+  output: 'export', // Si export statique (sinon enlever cette ligne)
+  trailingSlash: true,
 };
-  
+
 export default nextConfig;

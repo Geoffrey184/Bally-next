@@ -59,13 +59,14 @@ const Navbar = () => {
 
                             <div className="flex flex-shrink-0 items-center">
                                 <img
-                                    className="block h-12 w-40 lg:hidden"
-                                    src={'/assets/logo/logo.svg'}
+                                    className="block h-10 w-auto lg:hidden"
+                                    src={'/assets/nav/BallyLogo.jpg'}
                                     alt="dsign-logo"
+                                    
                                 />
                                 <img
-                                    className="hidden h-full w-full lg:block"
-                                    src={'/assets/logo/logo.svg'}
+                                    className="hidden h-12 w-auto lg:block" 
+                                    src={'/assets/nav/BallyLogo.jpg'}
                                     alt="dsign-logo"
                                 />
                             </div>

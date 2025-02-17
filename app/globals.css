@@ -37,3 +37,9 @@ html:not([data-scroll="0"]) .navbar {
   padding: 0px !important;
   z-index: 3;
 }
+
+.navbar-logo {
+  height: 90px; /* Ajustez selon vos besoins */
+  width: auto;
+  max-height: 100%;
+}

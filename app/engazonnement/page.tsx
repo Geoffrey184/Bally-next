@@ -1,10 +1,10 @@
 import Head from 'next/head';
-import Navbar from '../components/Navbar/Navbar';
+
 
 export default function Engazonnement() {
   return (
     <div>
-    <Navbar />
+    
     <div className="min-h-screen flex flex-col items-center justify-center bg-green-100 text-center">
       <Head>
         <title>Engazonnement - Bally Paysage</title>

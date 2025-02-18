@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar/Navbar';
 export default function Cloture() {
   return (
     <div>
-    <Navbar />
+    {/* <Navbar /> */}
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 text-center">
       <Head>
         <title>Clôture - Bally Paysage</title>

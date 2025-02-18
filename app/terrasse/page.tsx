@@ -1,10 +1,9 @@
 import Head from 'next/head';
-import Navbar from '../components/Navbar/Navbar';
+
 
 export default function Terrasse() {
   return (
     <div>
-    <Navbar />
     <div className="min-h-screen flex flex-col items-center justify-center bg-red-100 text-center">
       <Head>
         <title>Terrasse - Bally Paysage</title>

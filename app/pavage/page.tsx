@@ -1,10 +1,9 @@
 import Head from 'next/head';
-import Navbar from '../components/Navbar/Navbar';
+
 
 export default function Pavage() {
   return (
     <div>
-        <Navbar />
     <div className="min-h-screen flex flex-col items-center justify-center bg-yellow-100 text-center">
       <Head>
         <title>Pavage - Bally Paysage</title>

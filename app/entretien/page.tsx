@@ -1,10 +1,8 @@
 import Head from 'next/head';
-import Navbar from '../components/Navbar/Navbar';
 
 export default function Entretien() {
   return (
     <div>
-    <Navbar />
     <div className="min-h-screen flex flex-col items-center justify-center bg-blue-100 text-center">
       <Head>
         <title>Entretien - Bally Paysage</title>

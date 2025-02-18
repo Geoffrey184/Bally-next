@@ -5,7 +5,7 @@ export default function Footer() {
           <p><a href="mailto:contact@bally-paysage.fr" className="underline">contact@bally-paysage.fr</a></p>
           <nav className="mt-2">
               <a href="/mentions-legales" className="underline mx-2">Mentions Légales</a>
-              <a href="/politique-confidentialite" className="underline mx-2">Politique de Confidentialité</a>
+              <a href="/politique-de-confidentialite" className="underline mx-2">Politique de Confidentialité</a>
               <a href="/cgu" className="underline mx-2">CGU</a>
           </nav>
       </footer>

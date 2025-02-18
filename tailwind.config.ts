@@ -1,12 +1,13 @@
-import {nextui} from '@nextui-org/theme';
+import { nextui } from "@nextui-org/theme";
 import type { Config } from "tailwindcss";
 
-export default {
+const config: Config = {
+  mode: "jit", // Active le mode Just-In-Time pour éviter une purge excessive en production
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@nextui-org/theme/dist/components/image.js"
+    "./node_modules/@nextui-org/theme/dist/components/**/*.js", // Inclut toutes les composantes de NextUI
   ],
   theme: {
     extend: {
@@ -17,4 +18,6 @@ export default {
     },
   },
   plugins: [nextui()],
-} satisfies Config;
+};
+
+export default config;

@@ -5,6 +5,7 @@ import Link from 'next/link';
 import React, { useState } from 'react';
 import { Bars3Icon } from '@heroicons/react/24/outline';
 import { usePathname, useRouter } from 'next/navigation';
+import Image from 'next/image'; // Remplace <img> pour l'optimisation Next.js
 import Drawer from "./Drawer";
 import Drawerdata from "./Drawerdata";
 
@@ -21,12 +22,12 @@ const navigation: NavigationItem[] = [
     { name: 'Contact', href: '#contact', current: false },
 ];
 
-function classNames(...classes: string[]) {
-    return classes.filter(Boolean).join(' ');
-}
+// function classNames(...classes: string[]) {
+//     return classes.filter(Boolean).join(' ');
+// }
 
 // Fonction pour gérer le scroll fluide et la redirection propre
-const CustomLink = ({ href, onClick, children }: { href: string; onClick: () => void; children: React.ReactNode }) => {
+const CustomLink = ({ onClick, children }: { onClick: () => void; children: React.ReactNode }) => {
     return (
         <span
             onClick={onClick}
@@ -40,7 +41,6 @@ const CustomLink = ({ href, onClick, children }: { href: string; onClick: () => 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [dropdown, setDropdown] = useState(false);
-    const [currentLink, setCurrentLink] = useState('/');
     const pathname = usePathname();
     const router = useRouter();
 
@@ -65,15 +65,21 @@ const Navbar = () => {
                         <div className="flex flex-1 items-center sm:items-stretch sm:justify-start">
                             {/* LOGO */}
                             <div className="flex flex-shrink-0 items-center">
-                                <img
+                                <Image
                                     className="block h-10 w-auto lg:hidden"
-                                    src={'/assets/nav/BallyLogo.jpg'}
-                                    alt="dsign-logo"
+                                    src="/assets/nav/BallyLogo.jpg"
+                                    alt="Bally Paysage Logo"
+                                    width={120}
+                                    height={50}
+                                    priority
                                 />
-                                <img
-                                    className="hidden h-12 w-auto lg:block" 
-                                    src={'/assets/nav/BallyLogo.jpg'}
-                                    alt="dsign-logo"
+                                <Image
+                                    className="hidden h-12 w-auto lg:block"
+                                    src="/assets/nav/BallyLogo.jpg"
+                                    alt="Bally Paysage Logo"
+                                    width={150}
+                                    height={60}
+                                    priority
                                 />
                             </div>
 
@@ -110,15 +116,9 @@ const Navbar = () => {
                                     ) : (
                                         <CustomLink
                                             key={item.name}
-                                            href={item.href}
                                             onClick={() => handleScroll(item.href.substring(1))}
                                         >
-                                            <span
-                                                className={classNames(
-                                                    item.href === currentLink ? 'underline-links' : 'text-slategray',
-                                                    'px-3 py-4 text-lg font-normal opacity-75 hover:opacity-100'
-                                                )}
-                                            >
+                                            <span className="px-3 py-4 text-lg font-normal opacity-75 hover:opacity-100">
                                                 {item.name}
                                             </span>
                                         </CustomLink>
